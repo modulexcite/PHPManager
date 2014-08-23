@@ -123,7 +123,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>CALL "%25VS110COMNTOOLS%25\vsvars32.bat" &gt; NULL
+    <PostBuildEvent>call "%25VS120COMNTOOLS%25\vsvars32.bat"
 sn –Vr $(TargetFileName)
 gacutil.exe /if "$(TargetPath)"</PostBuildEvent>
   </PropertyGroup>

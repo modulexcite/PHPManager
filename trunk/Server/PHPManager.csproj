@@ -14,7 +14,7 @@
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\phpmgrpublic.snk</AssemblyOriginatorKeyFile>
-    <DelaySign>true</DelaySign>
+    <DelaySign>false</DelaySign>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -106,9 +106,7 @@
   <ItemGroup>
     <None Include="..\phpmgrpublic.snk">
       <Link>phpmgrpublic.snk</Link>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
+    </None>  
     <EmbeddedResource Include="Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -123,8 +121,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>call "%25VS120COMNTOOLS%25\vsvars32.bat"
-sn –Vr $(TargetFileName)
-gacutil.exe /if "$(TargetPath)"</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>

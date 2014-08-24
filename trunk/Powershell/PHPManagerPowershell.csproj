@@ -14,7 +14,7 @@
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\phpmgrpublic.snk</AssemblyOriginatorKeyFile>
-    <DelaySign>true</DelaySign>
+    <DelaySign>false</DelaySign>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -110,10 +110,6 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>CALL "%25VS90COMNTOOLS%25\vsvars32.bat" &gt; NULL
-sn –Vr $(TargetFileName)
-gacutil -if $(TargetPath)
-InstallUtil $(TargetPath)
-copy $(ProjectDir)Documentation\Web.Management.PHP.PowerShell.dll-Help.xml $(TargetDir) /Y</PostBuildEvent>
+    <PostBuildEvent>copy $(ProjectDir)Documentation\Web.Management.PHP.PowerShell.dll-Help.xml $(TargetDir) /Y</PostBuildEvent>
   </PropertyGroup>
 </Project>

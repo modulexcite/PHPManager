@@ -14,7 +14,7 @@
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\phpmgrpublic.snk</AssemblyOriginatorKeyFile>
-    <DelaySign>true</DelaySign>
+    <DelaySign>false</DelaySign>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -179,26 +179,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>call "%25VS120COMNTOOLS%25\vsvars32.bat"
-sn –Vr $(TargetFileName)
-gacutil.exe /if "$(TargetPath)"
-sn -Vr $(TargetDir)ru-RU\$(TargetName).resources.dll
-gacutil /if $(TargetDir)ru-RU\$(TargetName).resources.dll
-sn -Vr $(TargetDir)de-DE\$(TargetName).resources.dll
-gacutil /if $(TargetDir)de-DE\$(TargetName).resources.dll
-sn -Vr $(TargetDir)nl-NL\$(TargetName).resources.dll
-gacutil /if $(TargetDir)nl-NL\$(TargetName).resources.dll
-sn -Vr $(TargetDir)tr-TR\$(TargetName).resources.dll
-gacutil /if $(TargetDir)tr-TR\$(TargetName).resources.dll
-sn -Vr $(TargetDir)ja-JP\$(TargetName).resources.dll
-gacutil /if $(TargetDir)ja-JP\$(TargetName).resources.dll
-sn -Vr $(TargetDir)fr-FR\$(TargetName).resources.dll
-gacutil /if $(TargetDir)fr-FR\$(TargetName).resources.dll
-sn -Vr $(TargetDir)zh-TW\$(TargetName).resources.dll
-gacutil /if $(TargetDir)zh-TW\$(TargetName).resources.dll
-sn -Vr $(TargetDir)zh-CN\$(TargetName).resources.dll
-gacutil /if $(TargetDir)zh-CN\$(TargetName).resources.dll
-sn -Vr $(TargetDir)pt-BR\$(TargetName).resources.dll
-gacutil /if $(TargetDir)pt-BR\$(TargetName).resources.dll</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>
